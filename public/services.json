@@ -1,0 +1,49 @@
+[
+    {
+        "image":"https://i.ibb.co.com/PZDv5nV8/data-Recovary.jpg",
+        "icon_image":"https://i.ibb.co.com/nsPkZ96f/icon-7.png",
+        "title": "Data Recovary",
+        "details":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or words randomised which don't look Sed ut pers. All the Lorem Ipsum generators on the Internet tend to predefined chunks as necessary, making this the first true generator on net. Uses a dictionary of over always true latin words.",
+        "card_detail":"We give you complete all control . There are many variation  of... ",
+        "pric":45,
+        "offer_details":"You can position your service offering as one where customers have full autonomy to manage their repair process, whether it’s booking, tracking, or managing the entire experience. This can provide an empowering user experience. Here are the ways to give complete control to your customers"
+    },
+    {
+        "image":"https://i.ibb.co.com/7xh49GDp/os-Instalation.jpg",
+        "icon_image":"https://i.ibb.co.com/RpXL1fqR/icon-8.png",
+        "title": "OS Installation",
+        "details":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or words randomised which don't look Sed ut pers. All the Lorem Ipsum generators on the Internet tend to predefined chunks as necessary, making this the first true generator on net. Uses a dictionary of over always true latin words.",
+        "card_detail":"We give you complete all control . There are many variation  of... ",
+        "pric":10,
+        "offer_details":"You can position your service offering as one where customers have full autonomy to manage their repair process, whether it’s booking, tracking, or managing the entire experience. This can provide an empowering user experience. Here are the ways to give complete control to your customers"
+    },
+    {
+        "image":"https://i.ibb.co.com/6Rv5B4GB/pcRepair.jpg",
+        "icon_image":"https://i.ibb.co.com/yFMk6MN3/icon-1.png",
+        "title": "Computer Repair",
+        "details":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or words randomised which don't look Sed ut pers. All the Lorem Ipsum generators on the Internet tend to predefined chunks as necessary, making this the first true generator on net. Uses a dictionary of over always true latin words.",
+        "card_detail":"We give you complete all control . There are many variation  of... ",
+        "pric":59,
+        "offer_details":"You can position your service offering as one where customers have full autonomy to manage their repair process, whether it’s booking, tracking, or managing the entire experience. This can provide an empowering user experience. Here are the ways to give complete control to your customers"
+    },
+    {
+        "image":"https://i.ibb.co.com/XxykSkcM/cleaning-Laptop.jpg",
+        "icon_image":"https://i.ibb.co.com/VYNHDVgM/icon-4.png",
+        "title": "Cleaning Laptop",
+        "details":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or words randomised which don't look Sed ut pers. All the Lorem Ipsum generators on the Internet tend to predefined chunks as necessary, making this the first true generator on net. Uses a dictionary of over always true latin words.",
+        "card_detail":"We give you complete all control . There are many variation  of... ",
+        "pric":11,
+        "offer_details":"You can position your service offering as one where customers have full autonomy to manage their repair process, whether it’s booking, tracking, or managing the entire experience. This can provide an empowering user experience. Here are the ways to give complete control to your customers"
+    },
+    {
+        "image":"https://i.ibb.co.com/Df5pSZyf/front-view-man-repairing-computer.jpg",
+        "icon_image":"https://i.ibb.co.com/gb3Ph0z7/icon-3.png",
+        "title": "Motherboard Repair",
+        "details":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or words randomised which don't look Sed ut pers. All the Lorem Ipsum generators on the Internet tend to predefined chunks as necessary, making this the first true generator on net. Uses a dictionary of over always true latin words.",
+        "card_detail":"We give you complete all control . There are many variation  of... ",
+        "pric":99,
+        "offer_details":"You can position your service offering as one where customers have full autonomy to manage their repair process, whether it’s booking, tracking, or managing the entire experience. This can provide an empowering user experience. Here are the ways to give complete control to your customers"
+    }
+]
+
+
