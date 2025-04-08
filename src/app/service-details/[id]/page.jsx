@@ -1,5 +1,5 @@
 import dbConnect, { collectionNameObj } from '@/lib/dbConnect';
-import { ObjectId } from 'mongodb';
+// import { ObjectId } from 'mongodb';
 import Image from 'next/image';
 import bannerImage from '@/assest/detailsBanner.jpg'
 import gadgetImage from '@/assest/gadgetImg.jpg'
@@ -9,8 +9,11 @@ import Link from 'next/link';
 
 const serviceDetails = async ({ params }) => {
     const p = await params;
-    const singleServiceColl = dbConnect(collectionNameObj.servicesCollection)
-    const data = await singleServiceColl.findOne({ _id: new ObjectId(p.id) })
+    // const singleServiceColl = dbConnect(collectionNameObj.servicesCollection)
+    // const data = await singleServiceColl.findOne({ _id: new ObjectId(p.id) })
+
+    const res = await fetch(`http://localhost:3000/api/service/${p.id}`)
+    const data = await res.json()
 
 
     // all data loaded
@@ -29,8 +32,11 @@ const serviceDetails = async ({ params }) => {
                     quality={100}
                 />
                 <div className="bg-[#071E17] opacity-90 h-80 ">
-                    <div className='pt-20 pl-10'>
-                        <h2 className='text-5xl font-bold text-white'>{data.title}</h2>
+                    <div className='pt-20 p-10'>
+                        <div className='flex justify-between '>
+                            <h2 className='text-5xl font-bold text-white'>{data.title}</h2>
+                            <h2 className='text-5xl font-bold text-white '>Service Fee: ${data.pric}</h2>
+                        </div>
                         <p className='text-white flex mt-5'>
                             <span className='flex'>Home <ChevronRight className='text-[#00AA55]' /></span>
                             <span className='flex'>Services <ChevronRight className='text-[#00AA55]' /></span>
@@ -47,14 +53,14 @@ const serviceDetails = async ({ params }) => {
                             <div className='space-y-2 py-4 '>
                                 {
                                     datas.map(element => <div key={element._id}>
-                                        <Link className={`btn h-[50px] w-[250px] bg-[#D9D9D9] hover:border-2 hover:border-[#00AA55] `} href={`/service-details/${element._id}`}><ArrowUpRight className='text-[#00AA55]' />{element.title}</Link>
+                                        <Link href={`/service-details/${element._id}`} className={`btn h-[50px] w-[250px] bg-[#D9D9D9] hover:border-2 hover:border-[#00AA55] `} ><ArrowUpRight className='text-[#00AA55]' />{element.title}</Link>
                                     </div>)
                                 }
                             </div>
                         </div>
                     </div>
                     <div className='mt-3'>
-                        <button className="btn w-[300px] h-[50px] text-[20px] bg-[#00AA55] text-white">Checkout <ArrowUpRight /></button>
+                        <Link href={`/checkout/${data._id}`} className="btn w-[300px] h-[50px] text-[20px] bg-[#00AA55] text-white">Checkout <ArrowUpRight /></Link>
                     </div>
                 </div>
                 {/* Page details */}
@@ -71,7 +77,7 @@ const serviceDetails = async ({ params }) => {
                             <div>
                                 <Image className='rounded mt-2' src={gadgetImage} width={400} height={300} alt='gadgetImg'></Image>
                             </div>
-                            <div> 
+                            <div>
                                 <h3 className='text-[28px] font-bold' >How to Save Gadget?</h3>
                                 <ul className='space-y-2 mt-2'>
                                     <li className='flex gap-x-2'><CircleCheck className='text-[#00AA55]' />Invest in a quality phone case.</li>
