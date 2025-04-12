@@ -5,7 +5,7 @@ import { headers } from 'next/headers';
 
 const fetchData = async()=>{
     const res = await fetch("http://localhost:3000/api/service",{
-        headers: headers()
+        headers: await headers()
     })
     const d = await res.json();
     return d;
