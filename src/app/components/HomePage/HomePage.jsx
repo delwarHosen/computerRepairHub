@@ -13,8 +13,8 @@ const HomePage = () => {
             <Services></Services>
             <Protection></Protection>
             <About></About>
-            <Brandin></Brandin>
             <Review></Review>
+            <Brandin></Brandin>
         </div>
     );
 };

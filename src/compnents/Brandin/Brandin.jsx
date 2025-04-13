@@ -3,8 +3,8 @@ import React from 'react';
 
 const Brandin = () => {
     return (
-        <div className='flex space-x-5 m-16'>
-            <div className='flex space-x-2'>
+        <div className='grid md:grid-cols-3 space-x-5 space-y-5 md:m-16 m-6'>
+            <div className='md:flex space-x-2'>
                 <div>
                     <CircleCheck className='text-[#00AA55] w-[50px] h-[50px] mt-3' />
                 </div>
@@ -13,7 +13,7 @@ const Brandin = () => {
                     <p className='text-[#3B3B3B]'>Our team comprises skilled professionals with extensive training & certifications.</p>
                 </div>
             </div>
-            <div className='flex space-x-2'>
+            <div className='md:flex space-x-2'>
                 <div>
                     <CircleCheck className='text-[#00AA55] w-[50px] h-[50px] mt-3' />
                 </div>
@@ -22,7 +22,7 @@ const Brandin = () => {
                     <p className='text-[#3B3B3B]'>Work with the client to set short-term and long-term financial goals.</p>
                 </div>
             </div>
-            <div className='flex space-x-2'>
+            <div className='md:flex space-x-2'>
                 <div>
                     <CircleCheck className='text-[#00AA55] w-[50px] h-[50px] mt-3' />
                 </div>

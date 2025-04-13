@@ -5,11 +5,11 @@ import laptopImage from "@/assest/laptop.png"
 
 const Protection = () => {
     return (
-        <div className='bg-[#071E17] p-16 mt-16 flex space-x-5'>
-            <div className='space-y-5'>
+        <div className='bg-[#071E17] md:p-16 p-5 py-10 md:mt-16 mt-8 grid md:grid-cols-3 md:space-x-5'>
+            <div className='md:space-y-5 space-x-3 text-center'>
                 <h5 className='text-[18px] font-semibold text-[#00AA55]'>Protection</h5>
                 <h2 className='text-[40px] font-semibold text-white'>Ultimate Shield for Your Device </h2>
-                <button className="btn w-[200px] h-[60px] text-[20px] bg-[#00AA55] text-white">Talk with us <ArrowUpRight /></button>
+                <button className="btn w-[200px] h-[60px] text-[20px] mt-4 bg-[#00AA55] text-white">Talk with us <ArrowUpRight /></button>
             </div>
             <div className=' md:w-1/2 pr-12'>
                 <Image src={laptopImage} alt='laptop' height={500} width={500}></Image>

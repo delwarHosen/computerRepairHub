@@ -6,6 +6,7 @@ import gadgetImage from '@/assest/gadgetImg.jpg'
 import React from 'react';
 import { ArrowUpRight, ChevronRight, CircleCheck, Square } from 'lucide-react';
 import Link from 'next/link';
+// import Banner from '@/compnents/Banner/Banner';
 
 const serviceDetails = async ({ params }) => {
     const p = await params;
@@ -23,6 +24,7 @@ const serviceDetails = async ({ params }) => {
 
     return (
         <div>
+            {/* <Banner data={data}></Banner> */}
             <section className='relative w-full '>
                 <Image
                     src={bannerImage}
@@ -33,9 +35,9 @@ const serviceDetails = async ({ params }) => {
                 />
                 <div className="bg-[#071E17] opacity-90 h-80 ">
                     <div className='pt-20 p-10'>
-                        <div className='flex justify-between '>
-                            <h2 className='text-5xl font-bold text-white'>{data.title}</h2>
-                            <h2 className='text-5xl font-bold text-white '>Service Fee: ${data.pric}</h2>
+                        <div className='md:flex justify-between '>
+                            <h2 className='md:text-5xl text-2xl  font-bold text-white'>{data.title}</h2>
+                            <h2 className='md:text-5xl text-2xl font-bold text-white '>Service Fee: ${data.pric}</h2>
                         </div>
                         <p className='text-white flex mt-5'>
                             <span className='flex'>Home <ChevronRight className='text-[#00AA55]' /></span>
@@ -44,36 +46,19 @@ const serviceDetails = async ({ params }) => {
                     </div>
                 </div>
             </section>
-            <section className='flex w-full p-10'>
-                {/* page Link */}
-                <div className='md:w-1/4'>
-                    <div className='bg-white rounded-sm flex justify-center'>
-                        <div>
-                            <h2 className='text-[32px] font-semibold flex items-center gap-1'><Square className=' h-4 w-4 text-white bg-[#00AA55]'></Square> Our Services</h2>
-                            <div className='space-y-2 py-4 '>
-                                {
-                                    datas.map(element => <div key={element._id}>
-                                        <Link href={`/service-details/${element._id}`} className={`btn h-[50px] w-[250px] bg-[#D9D9D9] hover:border-2 hover:border-[#00AA55] `} ><ArrowUpRight className='text-[#00AA55]' />{element.title}</Link>
-                                    </div>)
-                                }
-                            </div>
-                        </div>
-                    </div>
-                    <div className='mt-3'>
-                        <Link href={`/checkout/${data._id}`} className="btn w-[300px] h-[50px] text-[20px] bg-[#00AA55] text-white">Checkout <ArrowUpRight /></Link>
-                    </div>
-                </div>
+            <section className='hero-content flex-col lg:flex-row-reverse w-full md:p-10 p-5'>
+
                 {/* Page details */}
                 <div className=' w-full'>
-                    <div className='ml-11'>
+                    <div className='md:ml-11'>
                         <Image className='rounded-xl' src={data.image} width={850} height={700} alt='details image'></Image>
                     </div>
-                    <div className='ml-12'>
-                        <div className='mt-10'>
-                            <h1 className='text-[36px] font-semibold'>We give you complete all control</h1>
+                    <div className='md:ml-12'>
+                        <div className='mt-10 md:text-start text-center'>
+                            <h1 className='md:text-[36px] text-[26px] font-semibold'>We give you complete all control</h1>
                             <p>You can position your service offering as one where customers have full autonomy to manage their repair process, whether it’s booking, tracking, or managing the entire experience. This can provide an empowering user experience. Here are the ways to give complete control to your customers. Provide an online self-diagnosis tool where customers can run through a checklist to identify what might be wrong with their device. This could help them choose the correct service.</p>
                         </div>
-                        <div className='flex gap-x-5 mt-5 '>
+                        <div className='md:flex gap-x-5 mt-5 '>
                             <div>
                                 <Image className='rounded mt-2' src={gadgetImage} width={400} height={300} alt='gadgetImg'></Image>
                             </div>
@@ -90,6 +75,24 @@ const serviceDetails = async ({ params }) => {
                             </div>
                         </div>
 
+                    </div>
+                </div>
+                {/* page Link */}
+                <div className='md:-mt-[700px]'>
+                    <div className='bg-white rounded-sm flex justify-center'>
+                        <div>
+                            <h2 className='text-[32px] font-semibold flex items-center gap-1'><Square className=' h-4 w-4 text-white bg-[#00AA55]'></Square> Our Services</h2>
+                            <div className='space-y-2 md:py-4 p-2 '>
+                                {
+                                    datas.map(element => <div key={element._id}>
+                                        <Link href={`/service-details/${element._id}`} className={`btn h-[50px] w-[250px] bg-[#D9D9D9] hover:border-2 hover:border-[#00AA55] `} ><ArrowUpRight className='text-[#00AA55]' />{element.title}</Link>
+                                    </div>)
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div className='mt-3'>
+                        <Link href={`/checkout/${data._id}`} className="btn w-[300px] h-[50px] text-[20px] bg-[#00AA55] text-white">Checkout <ArrowUpRight /></Link>
                     </div>
                 </div>
             </section>
