@@ -8,7 +8,8 @@ export const collectionNameObj={
 }
 
 export default function dbConnect(collectionName){
-    const uri = "mongodb+srv://computerHub:8YVykM65gpwNRzMy@cluster1.ot4itnh.mongodb.net/?appName=Cluster1";
+    // const uri = "mongodb+srv://computerHub:8YVykM65gpwNRzMy@cluster1.ot4itnh.mongodb.net/?appName=Cluster1";
+    const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
     // Create a MongoClient with a MongoClientOptions object to set the Stable API version
     const client = new MongoClient(uri, {
       serverApi: {

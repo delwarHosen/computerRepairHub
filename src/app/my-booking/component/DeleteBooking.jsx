@@ -6,9 +6,10 @@ import React from 'react';
 const DeleteBooking = ({id}) => {
     const router = useRouter()
     const handleDelete= async(id)=>{
-        const res = await fetch(`http://localhost:3000/api/service/${id}`,{
+        const res = await fetch(`https://tech-repair-hub.vercel.app/api/service/${id}`,{
             method: "DELETE"
         })
+        
         const deleteData = await res.json()
         router.refresh()
         console.log(deleteData);

@@ -1,25 +1,23 @@
 "use server"
-import bcrypt from "bcryptjs";
 import dbConnect, { collectionNameObj } from "@/lib/dbConnect";
 
 export const registerUser = async (payload) => {
     const usersCollection = dbConnect(collectionNameObj.userCollection)
-
+    // console.log(payload);
     const { email, password } = payload;
 
-    if (!email || !password) return null;
+    if (!email || !password) return { success: false };
 
     const user = await usersCollection.findOne({ email: payload.email })
     if (!user) {
-        const hashedPassword = await bcrypt.hash(password, 10);
-        payload.password = hashedPassword;
-        // const result = await usersCollection.insertOne(payload)
         const result = await usersCollection.insertOne(payload)
-        
-        result.insertedId = result.insertedId.toString()
-        return result
+        return {
+            success: true,
+            acknowledged: result.acknowledged,
+            insertedId: result.insertedId.toString(),
+        };
     }
 
-    return null;
+    return { success: false };
 
 }

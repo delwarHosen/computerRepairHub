@@ -11,18 +11,13 @@ const Review = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:3000/api/reviews")
+        fetch("https://tech-repair-hub.vercel.app/api/reviews")
+        // fetch("https://tech-repair-hub.vercel.app/api/reviews")
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
 
-    // const settings = {
-    //     dots: true,
-    //     infinite: true,
-    //     speed: 500,
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1
-    // };
+    
 
     var settings = {
         dots: true,

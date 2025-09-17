@@ -4,9 +4,10 @@ import React from 'react';
 
 const checkout = async ({ params }) => {
     const p = await params;
-    const res = await fetch(`http://localhost:3000/api/service/${p.id}`,{
-        headers: await headers()
+    const res = await fetch(`https://tech-repair-hub.vercel.app/api/service/${p.id}`, {
+        headers: new Headers(await headers())
     })
+    
     const data = await res.json()
     return (
         <div>

@@ -34,8 +34,8 @@ const Contact = () => {
             </section>
             {/* card */}
             <section className='flex justify-center items-center'>
-                <div className='grid md:grid-cols-3 space-x-5'>
-                    <div className='flex space-x-3 py-8 px-5 border-2 border-[#3B3B3B] hover:border-[#00AA55] rounded-xl md:my-10 my-3'>
+                <div className='grid md:grid-cols-3 space-x-2'>
+                    <div className='flex space-x-3  py-8 px-5 border-2 border-[#3B3B3B] hover:border-[#00AA55] rounded-xl md:my-10 my-3'>
                         <span className='h-14 w-14 mt-2 border-2 border-[#3B3B3B] hover:border-[#00AA55] hover:bg-[#3B3B3B] hover:text-[#00AA55] rounded-full'><MapPin className='mx-auto mt-3 text-[50px]' /></span>
                         <div>
                             <h3 className='text-[28px] font-semibold'>Our Address</h3>
@@ -53,37 +53,36 @@ const Contact = () => {
                         <span className='h-14 w-14 mt-2 border-2 border-[#3B3B3B] hover:border-[#00AA55] hover:bg-[#3B3B3B] hover:text-[#00AA55] rounded-full'><Clock className='mx-auto mt-3 text-[50px]' /></span>
                         <div>
                             <h3 className='text-[28px] font-semibold'>Opening Hours</h3>
-                            <p>Sat - Mon 10 am - 8 pm
-                                Fri Off - Day</p>
+                            <p>Sat - Mon 10 am - 8 pm Fri Off - Day</p>
                         </div>
                     </div>
                 </div>
             </section>
             {/* contact form */}
             <section>
-                <div className='md:w-1/2 bg-white m-3 rounded-md md:p-10'>
+                <div className='md:w-1/2 bg-[#1a1a1a] m-3 rounded-md md:p-10'>
                     <h3 className='text-[28px] font-semibold text-center'>Send us a Direct Message</h3>
                     <form className="p-5 rounded-lg">
                         <div className='md:flex md:space-x-5 space-y-4'>
                             <div className="form-control w-full">
                                 <label className="fieldset-label font-semibold">Name</label>
-                                <input type="text" name='name' placeholder="Enter Your Name" className="input input-bordered w-full" required />
+                                <input type="text" name='name' placeholder="Enter Your Name" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                         </div>
                         <div className='md:flex md:space-x-5 space-y-3'>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Email</label>
-                                <input type="email" name='email' placeholder="Enter Your Email" className="input input-bordered w-full" required />
+                                <input type="email" name='email' placeholder="Enter Your Email" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Phone</label>
-                                <input type="number" name='phone' placeholder="Enter Your Phone no" className="input input-bordered w-full" required />
+                                <input type="number" name='phone' placeholder="Enter Your Phone no" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                         </div>
                         <div className='md:flex md:space-x-5 space-y-3'>
                             <div className="form-control w-full">
                                 <label className="fieldset-label font-semibold">Your Message</label>
-                                <textarea type="text" name='message' placeholder="Message" className="input input-bordered w-full  h-28" required />
+                                <textarea type="text" name='message' placeholder="Message" className="input input-bordered border-gray-500 w-full bg-black/10  h-28" required />
                             </div>
                             
                         </div>

@@ -7,7 +7,7 @@ const Service = ({ element }) => {
     const { _id,title, image, icon_image, card_detail } = element
     return (
         <div className='md:mt-10 mt-5 mx-auto'>
-            <div className="card bg-base-100 md:w-96 w-[350px] shadow-sm">
+            <div className="card bg-[#1a1a1a] md:w-96 w-[350px] shadow-sm">
                 <div>
                     <Image className='w-full p-4 rounded-3xl' src={image} width={200} height={200} alt='service image'></Image>
                 </div>

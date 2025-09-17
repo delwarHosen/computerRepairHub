@@ -10,10 +10,9 @@ import Link from 'next/link';
 
 const serviceDetails = async ({ params }) => {
     const p = await params;
-    // const singleServiceColl = dbConnect(collectionNameObj.servicesCollection)
-    // const data = await singleServiceColl.findOne({ _id: new ObjectId(p.id) })
 
-    const res = await fetch(`http://localhost:3000/api/service/${p.id}`)
+    const res = await fetch(`https://tech-repair-hub.vercel.app/api/service/${p.id}`)
+    
     const data = await res.json()
 
 
@@ -79,13 +78,13 @@ const serviceDetails = async ({ params }) => {
                 </div>
                 {/* page Link */}
                 <div className='md:-mt-[700px]'>
-                    <div className='bg-white rounded-sm flex justify-center'>
+                    <div className='bg-[#1a1a1a] rounded-sm flex justify-center'>
                         <div>
-                            <h2 className='text-[32px] font-semibold flex items-center gap-1'><Square className=' h-4 w-4 text-white bg-[#00AA55]'></Square> Our Services</h2>
+                            <h2 className='text-[32px] font-semibold flex items-center gap-1'><Square className=' h-4 w-4  bg-[#00AA55]'></Square> Our Services</h2>
                             <div className='space-y-2 md:py-4 p-2 '>
                                 {
                                     datas.map(element => <div key={element._id}>
-                                        <Link href={`/service-details/${element._id}`} className={`btn h-[50px] w-[250px] bg-[#D9D9D9] hover:border-2 hover:border-[#00AA55] `} ><ArrowUpRight className='text-[#00AA55]' />{element.title}</Link>
+                                        <Link href={`/service-details/${element._id}`} className={`btn h-[50px] w-[250px] bg-[#000000] text-white hover:border-2 hover:border-[#00AA55] `} ><ArrowUpRight className='text-[#00AA55]' />{element.title}</Link>
                                     </div>)
                                 }
                             </div>

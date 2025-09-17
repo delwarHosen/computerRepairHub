@@ -10,7 +10,7 @@ const BookingTable = ({ data }) => {
             <table className="table">
                 {/* head */}
                 <thead>
-                    <tr className='text-[21px]'>
+                    <tr className='text-[21px] text-white'>
                         <th>Photo</th>
                         <th>Name</th>
                         <th>Address</th>
@@ -23,7 +23,7 @@ const BookingTable = ({ data }) => {
                 </thead>
                 <tbody>
                     {
-                        data.map((item) => <tr className='text-[16px] font-semibold' key={item._id}>
+                        data.map((item) => <tr className='text-[14px] font-medium' key={item._id}>
                             <td>
                             {/* {item.service_img} */}
                                 {/* <Image src={data.sservice_img} className='h-28' width={150} alt='logo'></Image> */}

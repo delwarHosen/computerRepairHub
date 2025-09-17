@@ -31,50 +31,72 @@ const CheckOut = ({ data }) => {
             service_img: data.image
         }
 
-        // console.log(bookingService);
+        // const res = await fetch("https://tech-repair-hub.vercel.app/api/service", {
+        //     method: "POST",
+        //     body: JSON.stringify(bookingService)
+        // })
 
-        const res = await fetch("http://localhost:3000/api/service", {
-            method: "POST",
-            body: JSON.stringify(bookingService)
-        })
-        const payloadService = await res.json()
-        console.log(payloadService);
+        // const payloadService = await res.json()
+        // console.log(payloadService);
+
+        try {
+            const res = await fetch("https://tech-repair-hub.vercel.app/api/service", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json", // important
+                },
+                body: JSON.stringify(bookingService),
+            });
+
+            const payloadService = await res.json();
+
+            if (res.ok) {
+                alert("✅ Booking successful!");
+            } else {
+                alert(`❌ Booking failed: ${payloadService.message || "Try again later"}`);
+            }
+
+            console.log(payloadService);
+        } catch (error) {
+            console.error(error);
+            alert("⚠️ Something went wrong. Please try again.");
+        }
     }
 
     return (
         <div className='md:p-5'>
-            <h2 className='text-[24px] font-semibold underline text-center uppercase'>Booking Your Service: {data.title}</h2>
+            <h2 className='text-[24px] font-semibold text-center mb-3'>Booking Your Service: {data.title}</h2>
             <div className='flex justify-center'>
                 <div className='md:w-2/3'>
-                    <form onSubmit={handleBooking} className="bg-white md:p-10 p-5 rounded-lg">
+                    <form onSubmit={handleBooking} className="bg-[#1a1a1a] text-white md:p-10 p-5 rounded-lg">
                         <div className='md:flex md:space-x-5 space-y-3'>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Name</label>
-                                <input type="text" defaultValue={session?.user?.name} readOnly name='name' placeholder="Enter Your Name" className="input input-bordered w-full" required />
+                                <input type="text" defaultValue={session?.user?.name} readOnly name='name' placeholder="Enter Your Name" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Email</label>
-                                <input type="email" defaultValue={session?.user?.email} readOnly name='email' placeholder="Enter Your Email" className="input input-bordered w-full" required />
+                                <input type="email" defaultValue={session?.user?.email} readOnly name='email' placeholder="Enter Your Email" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                         </div>
                         <div className='md:flex md:space-x-5 space-y-3'>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Amount</label>
-                                <input type="number" defaultValue={data.pric} readOnly name='price' placeholder="Due Ammount" className="input input-bordered w-full" required />
+                                <input type="number" defaultValue={data.pric} readOnly name='price' placeholder="Due Ammount" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Date</label>
-                                <input type="date" name='date' placeholder="Enter Your Password" className="input input-bordered w-full" required />
+                                <input type="date" name='date' placeholder="Enter Your Password" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                         </div>
                         <div className='md:flex md:space-x-5 space-y-3'>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Phone No</label>
-                                <input type="number" name='phone' placeholder="Enter Your Phone" className="input input-bordered w-full" required />
+                                <input type="number" name='phone' placeholder="Enter Your Phone" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                             <div className="form-control md:w-1/2">
                                 <label className="fieldset-label font-semibold">Parmanent Address</label>
-                                <input type="text" name='address' placeholder="Enter Your Address" className="input input-bordered w-full" required />
+                                <input type="text" name='address' placeholder="Enter Your Address" className="input input-bordered border-gray-500 w-full bg-black/10" required />
                             </div>
                         </div>
                         <div className="form-control mt-6">

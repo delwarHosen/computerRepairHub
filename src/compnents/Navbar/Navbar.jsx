@@ -5,13 +5,12 @@ import logo from "@/assest/logo.png"
 import Link from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import { Mail, Phone } from 'lucide-react';
-import { Reveal } from '@/app/components/Reveal';
 
 const Navbar = () => {
 
     const { data: session, status } = useSession()
     // const session = useSession()
-    // console.log(session);
+    console.log(session);
 
     const navOption = () => {
         return (
@@ -27,8 +26,8 @@ const Navbar = () => {
     }
 
     return (
-        <Reveal initialY={-30} duration={0.1}>
-            <div className="navbar bg-base-100 shadow-sm">
+       
+            <div className="navbar shadow-sm">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,7 +44,7 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-[16px] uppercase font-semibold">
+                    <ul className="menu menu-horizontal px-1 text-[12px] uppercase font-semibold">
                         {navOption()}
                     </ul>
                 </div>
@@ -53,7 +52,7 @@ const Navbar = () => {
                     <div className='grid grid-cols-1'>
                         <div className='flex space-x-5 justify-end md:mr-5 -mt-10'>
                             <p className='flex space-x-2 font-semibold text-[14px]'><Mail className='md:text-[18px] text-[12px]'></Mail> <span>delwar.hosen008@gmail.com</span></p>
-                            <p className='flex space-x-2 font-semibold text-[14px]'><Phone></Phone> <span>+001878865256</span></p>
+                            <p className='flex space-x-2 font-semibold text-[14px]'><Phone></Phone> <span>+01878865256</span></p>
                         </div>
                         <div className='flex space-x-5 justify-end mr-5 text-[18px] font-semibold'>
                             {
@@ -71,7 +70,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-        </Reveal>
+        
     );
 };
 

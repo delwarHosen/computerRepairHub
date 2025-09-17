@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { signIn } from "next-auth/react"
 import { useRouter } from 'next/navigation';
+import authImage from "../../assest/auth.png"
+import Image from 'next/image';
 
 const login = () => {
     const router = useRouter()
@@ -14,7 +16,7 @@ const login = () => {
 
         // signIn("credentials", { email, password, callbackUrl: '/'})
 
-        
+
         try {
             const respons = await signIn("credentials", { email, password, callbackUrl: '/', redirect: false });
             if (respons.ok) {
@@ -33,18 +35,21 @@ const login = () => {
     }
 
     return (
-        <div className='md:p-5'>
-            <h2 className='text-[36px] font-semibold underline text-center uppercase'>Please Login</h2>
-            <div className='flex justify-center '>
-                <div className='bg-white p-10 rounded-xl shadow-2xl'>
+        <div className='flex flex-col-reverse sm:flex-row justify-center md:p-5'>
+            <div>
+                <Image src={authImage} height={400} width={500} alt="login image"/>
+            </div>
+            <div>
+                <h2 className='md:text-[28px] text-[24px] text-center md:text-start font-semibold'>Please Login</h2>
+                <div className='bg-[#1a1a1a] rounded-xl shadow-2xl p-5 md:mt-7'>
                     <form onSubmit={handleLogin} className="rounded-lg space-y-4">
                         <div className="form-control">
                             <label className="fieldset-label font-semibold">Email</label>
-                            <input type="email" name='email' placeholder="Enter Your Email" className="input w-full" required />
+                            <input type="email" name='email' placeholder="Enter Your Email" className="input w-full text-[#1a1a1a]" required />
                         </div>
                         <div className="form-control">
                             <label className="fieldset-label font-semibold">Password</label>
-                            <input type="password" name='password' className="input w-full" placeholder="Enter Your Password" required />
+                            <input type="password" name='password' className="input w-full text-[#1a1a1a]" placeholder="Enter Your Password" required />
                             <label className="label">
                                 <p className='font-semibold'> Don't have an account?<Link href={"/register"} className="label-text-alt link link-hover">Please Signup </Link></p>
                             </label>
